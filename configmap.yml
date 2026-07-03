@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Configmap
+metadata:
+  name: mb-config
+  namespace: mb
+data:
+  DATABASE_URL: postgresql://medibook:medibook@db:5432/medibook
+  POSTGRES_USER: medibook
+  POSTGRES_DB: medibook 

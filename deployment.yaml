@@ -20,6 +20,17 @@ spec:
           image: bsainiharika/medibook:v1
           ports:
             - containerPort: 5000
+          env:
+            - name: Database-url
+              valueFrom:
+                configMapKeyRef:
+                  name: mb-config
+                  key: DATABASE_URL
+            - name: key
+              valueFrom:
+                secretKeyRef:
+                  name: mb-secret
+                  key: JWT_SECRET_KEY
           resources:
             requests:
                cpu: "100m"
