@@ -21,12 +21,12 @@ spec:
           ports:
             - containerPort: 5000
           env:
-            - name: Database-url
+            - name: DATABASE_URL
               valueFrom:
                 configMapKeyRef:
                   name: mb-config
                   key: DATABASE_URL
-            - name: key
+            - name: JWT_SECRET_KEY
               valueFrom:
                 secretKeyRef:
                   name: mb-secret
